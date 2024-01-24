@@ -7,7 +7,7 @@ import "package:reconnect/src/widgets/authenticate_button.dart";
 class WelcomePage extends StatelessWidget {
   final int scwidth;
   final int scheight;
-  const WelcomePage({super.key, required this.scwidth,required this.scheight});
+  WelcomePage({super.key, required this.scwidth,required this.scheight});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class WelcomePage extends StatelessWidget {
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: scheight*.04,),
+            SizedBox(height: scheight*0.04,),
             Container(
                     height: scheight*0.131,
                     width: scwidth*0.79,

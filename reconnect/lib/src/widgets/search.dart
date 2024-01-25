@@ -7,10 +7,11 @@ SizedBox Search(
   final int scheight
 ){
   return SizedBox(
-    width: scwidth * 0.712,
+    width: scwidth * 0.852,
     height:scheight*0.067,
     child: TextField(
       controller: _searchController,
+      textAlign: TextAlign.center,
       decoration: InputDecoration(
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
@@ -24,6 +25,7 @@ SizedBox Search(
           width:2.0,
           )
         ),
+        
         hintText: "Search your institute",
         suffixIcon:IconButton(
           icon: Icon(Icons.search),

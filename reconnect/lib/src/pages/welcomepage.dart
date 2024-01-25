@@ -3,6 +3,7 @@ import "package:google_fonts/google_fonts.dart";
 import "package:reconnect/src/constants/colors.dart";
 import "package:reconnect/src/constants/image_strings.dart";
 import "package:reconnect/src/constants/text_strings.dart";
+import "package:reconnect/src/pages/loginPage.dart";
 import "package:reconnect/src/widgets/authenticate_button.dart";
 class WelcomePage extends StatelessWidget {
   final int scwidth;
@@ -54,7 +55,13 @@ class WelcomePage extends StatelessWidget {
                     child: Image.asset(ImgaeConstants.welcomeImage),
                   ),
                   SizedBox(height: scheight*.038,),
-                  Authbutton("Login", scheight, scwidth, () { print("pressed login!!!");}),
+                  Authbutton("Login", scheight, scwidth, () { 
+                    print("pressed login!!!");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginPage(scwidth: scwidth, scheight: scheight))
+                    );
+                  }),
                   SizedBox(height: scheight*.015,),
                   SizedBox(
                     width: scwidth*0.717,

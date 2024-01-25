@@ -29,7 +29,8 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         width: widget.scwidth*0.999,
         height: widget.scheight*0.999,
-        child: Column(
+        child:SingleChildScrollView(
+          child: Column(
           children: [
             SizedBox(height: widget.scheight*0.04),
             Container(
@@ -103,6 +104,8 @@ class _LoginPageState extends State<LoginPage> {
             )   
           ],
         ),
+        ),
+        
       ),
     );
   }

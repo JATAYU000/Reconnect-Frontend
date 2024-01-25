@@ -30,7 +30,7 @@ class _SelectUniState extends State<SelectUni> {
             Container(
               height: widget.scheight*0.131,
               width: widget.scwidth*0.79,
-              child: Image.asset(ImgaeConstants.LogoText),
+              child: Image.asset(ImageConstants.LogoText),
             ),
             SizedBox(height: widget.scheight*.028),
             Text(

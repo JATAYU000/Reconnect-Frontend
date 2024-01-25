@@ -30,7 +30,7 @@ class _RegisterUniState extends State<RegisterUni> {
             Container(
                     height: widget.scheight*0.131,
                     width: widget.scwidth*0.79,
-                    child: Image.asset(ImgaeConstants.LogoText),
+                    child: Image.asset(ImageConstants.LogoText),
                   ),
             SizedBox(height: widget.scheight*.019,),
             Text(
@@ -42,7 +42,7 @@ class _RegisterUniState extends State<RegisterUni> {
             Container(
                     height: widget.scheight*0.442,
                     width: widget.scwidth*0.483,
-                    child: Image.asset(ImgaeConstants.RegUni),
+                    child: Image.asset(ImageConstants.RegUni),
                   ),
             Authbutton("Request", widget.scheight, widget.scwidth, () { print("Requested: !!");})
           ]

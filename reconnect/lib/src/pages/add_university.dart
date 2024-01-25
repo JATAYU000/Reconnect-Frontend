@@ -30,7 +30,7 @@ class _AddUniversityState extends State<AddUniversity> {
             Container(
                     height: widget.scheight*0.131,
                     width: widget.scwidth*0.79,
-                    child: Image.asset(ImgaeConstants.LogoText),
+                    child: Image.asset(ImageConstants.LogoText),
                   ),
             SizedBox(height: widget.scheight*.019,),
             Text(
@@ -41,7 +41,7 @@ class _AddUniversityState extends State<AddUniversity> {
             Container(
               height: widget.scheight*0.246,
               width: widget.scwidth*0.452,
-              child: Image.asset(ImgaeConstants.AddUni),
+              child: Image.asset(ImageConstants.AddUni),
             ),
             SizedBox(height: widget.scheight*0.03,),
             Userinput("Department (Abbr.)", widget.scheight, widget.scwidth, AddDept),

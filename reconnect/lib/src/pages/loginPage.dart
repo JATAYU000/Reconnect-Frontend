@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
             Container(
               height: widget.scheight*0.131,
               width: widget.scwidth*0.79,
-              child: Image.asset(ImgaeConstants.LogoText),
+              child: Image.asset(ImageConstants.LogoText),
             ),
             SizedBox(height: widget.scheight*.028),
             Text(
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
             Container(
               height: widget.scheight*0.241,
               width: widget.scwidth*0.99,
-              child: Image.asset(ImgaeConstants.login_page),
+              child: Image.asset(ImageConstants.login_page),
             ),   
             SizedBox(height: widget.scheight*.015,),    
             SizedBox(

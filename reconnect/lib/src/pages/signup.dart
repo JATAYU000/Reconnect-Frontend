@@ -36,7 +36,7 @@ class _SignUpState extends State<SignUp> {
             Container(
                     height: widget.scheight*0.131,
                     width: widget.scwidth*0.79,
-                    child: Image.asset(ImgaeConstants.LogoText),
+                    child: Image.asset(ImageConstants.LogoText),
                   ),
             SizedBox(height: widget.scheight*.019,),
             Text(
@@ -85,7 +85,7 @@ class _SignUpState extends State<SignUp> {
             Container(
               height: widget.scheight*0.109,
               width: widget.scwidth*1.87,
-              child: Image.asset(ImgaeConstants.Signimgae),
+              child: Image.asset(ImageConstants.Signimgae),
             )
           ],
         ))

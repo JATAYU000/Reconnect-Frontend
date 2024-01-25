@@ -26,7 +26,7 @@ class WelcomePage extends StatelessWidget {
             Container(
                     height: scheight*0.131,
                     width: scwidth*0.79,
-                    child: Image.asset(ImgaeConstants.LogoText),
+                    child: Image.asset(ImageConstants.LogoText),
                   ),
             SizedBox(height: scheight*.028,),
             Padding(
@@ -53,7 +53,7 @@ class WelcomePage extends StatelessWidget {
                   Container(
                     height: scheight*0.422,
                     width: scwidth*0.796,
-                    child: Image.asset(ImgaeConstants.welcomeImage),
+                    child: Image.asset(ImageConstants.welcomeImage),
                   ),
                   SizedBox(height: scheight*.038,),
                   Authbutton("Login", scheight, scwidth, () { 

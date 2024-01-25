@@ -3,5 +3,7 @@ class TextConstants{
   static const String WelcomeSubTitle = "log into your account";
   static const String WelcomeAccount = "Don’t have a account?";
   static const String WelcomeBack = "Welcome Back!";
+  static const String rememberme = "remember me";
+  static const String forgotpass = "forgot password?";
 
 }

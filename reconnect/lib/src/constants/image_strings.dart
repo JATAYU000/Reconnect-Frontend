@@ -4,4 +4,6 @@ class ImgaeConstants{
   static const String Logo = "assets/images/logo.png";
   static const String login_page = "assets/images/login_page.png";
   static const String Signimgae = 'assets/images/image_2.png';
+  static const String AddUni = 'assets/images/image3.png';
+  static const String RegUni = 'assets/images/image-8.png';
 }

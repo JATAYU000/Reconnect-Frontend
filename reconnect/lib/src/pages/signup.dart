@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
+import 'package:reconnect/src/pages/add_university.dart';
 import 'package:reconnect/src/pages/loginPage.dart';
 import 'package:reconnect/src/widgets/authenticate_button.dart';
 import 'package:reconnect/src/widgets/input_field.dart';
@@ -51,7 +52,12 @@ class _SignUpState extends State<SignUp> {
             SizedBox(height: widget.scheight*0.03,),
             Userinput("Password", widget.scheight, widget.scwidth, SignPassword),
             SizedBox(height: widget.scheight*0.03,),
-            Authbutton("Register", widget.scheight, widget.scwidth, () {print(SignUsername.text); }),
+            Authbutton("Register", widget.scheight, widget.scwidth, () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddUniversity(scwidth: widget.scwidth, scheight: widget.scheight))
+              );
+             }),
             SizedBox(
                     width: widget.scwidth*0.717,
                     child: Row(
@@ -63,10 +69,10 @@ class _SignUpState extends State<SignUp> {
                           ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => LoginPage(scwidth: widget.scwidth, scheight: widget.scheight))
-                            );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(builder: (context) => LoginPage(scwidth: widget.scwidth, scheight: widget.scheight))
+                            // );
                           },
                           child: Text(
                             'Log In',

@@ -11,7 +11,7 @@ class TextConstants{
   static const String AddUniString="Fill in the details";
   static const String AddUniSub="Add to dashboard";
   static const String RegUniTitle="Request your institute \nto be added";
-  static const String InstittueListed="Institute now listed";
+  static const String InstittueListed="Institute not listed?";
 
 
 

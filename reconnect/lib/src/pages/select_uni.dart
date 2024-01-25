@@ -4,6 +4,7 @@ import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
 import 'package:reconnect/src/pages/register_university.dart';
+import 'package:reconnect/src/widgets/clg_list.dart';
 import 'package:reconnect/src/widgets/search.dart';
 
 class SelectUni extends StatefulWidget {
@@ -25,11 +26,11 @@ class _SelectUniState extends State<SelectUni> {
         height: widget.scheight*0.999,
         child:SingleChildScrollView(
           child: Column(
-          children: [
+          children:  [
             SizedBox(height: widget.scheight*0.04),
             Container(
               height: widget.scheight*0.131,
-              width: widget.scwidth*0.79,
+              width: widget.scwidth*0.80,
               child: Image.asset(ImageConstants.LogoText),
             ),
             SizedBox(height: widget.scheight*.028),
@@ -39,7 +40,13 @@ class _SelectUniState extends State<SelectUni> {
             ),
             SizedBox(height: widget.scheight*.020),
             Search(widget.scwidth,widget.scheight),
-            Text(
+            SizedBox(height: widget.scheight*.020),
+            clollege_list(context, widget.scwidth, widget.scheight),
+            SizedBox(height: widget.scheight*.10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
               TextConstants.InstittueListed,
               style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.019,),
               ),
@@ -55,6 +62,9 @@ class _SelectUniState extends State<SelectUni> {
                 style: GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize: widget.scheight*0.019,fontWeight: FontWeight.bold),
               ),
             ),
+              ],
+            )
+            
           ],
           ),
         ),

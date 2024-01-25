@@ -7,9 +7,13 @@ class TextConstants{
   static const String forgotpass = "forgot password?";
   static const String SignTitle = "Create a new account";
   static const String LoginAcc = "Already have an account?";
-  static const String AddUniString = "Fill in the Details";
-  static const String AddUniSub = "Add to DashBoard";
-  static const String RegUniTitle = "Request your institute\nto be added ";
+  static const String Select = "Select your institute";
+  static const String AddUniString="Fill in the details";
+  static const String AddUniSub="Add to dashboard";
+  static const String RegUniTitle="Request your institute \nto be added";
+  static const String InstittueListed="Institute now listed";
+
+
 
 
 }

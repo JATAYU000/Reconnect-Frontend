@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
+import 'package:reconnect/src/models/institution.dart';
+import 'package:reconnect/src/pages/add_university.dart';
 import 'package:reconnect/src/pages/register_university.dart';
 import 'package:reconnect/src/widgets/clg_list.dart';
 import 'package:reconnect/src/widgets/search.dart';
@@ -41,7 +43,24 @@ class _SelectUniState extends State<SelectUni> {
             SizedBox(height: widget.scheight*.020),
             Search(widget.scwidth,widget.scheight),
             SizedBox(height: widget.scheight*.020),
-            clollege_list(context, widget.scwidth, widget.scheight),
+            SizedBox(
+              width: widget.scwidth * 0.852,
+              height:widget.scheight*0.430,
+              child:ListView.builder(
+                itemCount: InstitutionList.length,
+                itemBuilder: (context, index) {
+                  return clollege_list(context, widget.scwidth, widget.scheight,index,InstitutionList,
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AddUniversity(scwidth: widget.scwidth, scheight: widget.scheight,index: index))
+                    );
+                  }
+                  );
+
+                }
+              )
+            ),
             SizedBox(height: widget.scheight*.10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

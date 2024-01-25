@@ -10,4 +10,5 @@ class ImageConstants{
   static const String ColVit = 'assets/logos/college1.png';
   static const String ColAmt = 'assets/logos/college3.png';
   static const String ColIit = 'assets/logos/college4.png';
+  static const String DashImg = 'assets/images/image4.png';
 }

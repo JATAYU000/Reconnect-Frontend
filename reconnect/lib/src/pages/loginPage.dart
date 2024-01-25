@@ -23,6 +23,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   TextEditingController user_controller = TextEditingController();
+  TextEditingController pass_controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(height: widget.scheight*.03),
             Userinput('Username', widget.scheight , widget.scwidth, user_controller),
             SizedBox(height: widget.scheight*.03),
-            Userinput('Password', widget.scheight , widget.scwidth, user_controller),
+            Userinput('Password', widget.scheight , widget.scwidth, pass_controller),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

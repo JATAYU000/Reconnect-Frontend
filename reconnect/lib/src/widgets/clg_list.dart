@@ -2,15 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/models/institution.dart';
-import 'package:reconnect/src/pages/add_university.dart';
 
-SizedBox clollege_list(BuildContext context,final int scwidth,final int scheight){
-      return SizedBox(
-        width: scwidth * 0.852,
-        height:scheight*0.430,
-        child:ListView.builder(
-          itemCount: InstitutionList.length,
-          itemBuilder: (context, index) {
+Padding clollege_list(BuildContext context,final int scwidth,final int scheight,final int index,final List<Institution> list,final VoidCallback callback,){
+     
             return Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: Container(
@@ -21,21 +15,15 @@ SizedBox clollege_list(BuildContext context,final int scwidth,final int scheight
                 ),
                 height: scheight*0.0686,
                 child:GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                               context,
-                               MaterialPageRoute(builder: (context) => AddUniversity(scwidth: scwidth, scheight: scheight))
-                            );
-                      },
+                      onTap:  callback,
                        child: Row(
                         children: [
                           SizedBox(width: 10),
-                          Image.asset(InstitutionList[index].instituteIcon,width: scwidth*0.108,),
+                          Image.asset(list[index].instituteIcon,width: scwidth*0.108,),
                           SizedBox(width: 10),
-                          Text(InstitutionList[index].name,
+                          Text(list[index].name,
                           style:  GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize:scheight*0.019,fontWeight: FontWeight.bold),
                           )
-                    
                         ],
                   
                       ),
@@ -45,9 +33,5 @@ SizedBox clollege_list(BuildContext context,final int scwidth,final int scheight
                 ),
                 
             );
-              
-          },
-        )
-        );
   
 }

@@ -10,15 +10,21 @@ SizedBox Userinput(
   final TextEditingController control,
 ) {
   return SizedBox(
-    height: screenheight*0.078,
-    width: screenwidth*1.0,
+    height: screenheight*0.088,
+    width: screenwidth*0.9,
     child: 
         TextField(
           controller: control,
-          decoration: InputDecoration(
-              // hintText: "Enter your email",
+          decoration: InputDecoration(        
+              enabledBorder: UnderlineInputBorder(      
+                      borderSide: BorderSide(color: Color(ColorConstants.primary)),   
+                      ),  
+              focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(ColorConstants.primary)),
+              ),
+
               labelText: fieldtitle,
               labelStyle: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: screenheight*0.023,),)
-          ),
-  );
+             ),
+           );
 }

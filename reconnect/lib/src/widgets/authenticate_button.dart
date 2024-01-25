@@ -10,13 +10,13 @@ SizedBox Authbutton(
   final VoidCallback callback,
 ) {
   return SizedBox(
-        height: screenheight*0.067,
+        height: screenheight*0.07,
         width: screenwidth*0.717,
         // width: (screenwidth-5)/2,
         child: TextButton(
           onPressed: callback,
           child: Container(
-            height: screenheight*0.067,
+            height: screenheight*0.07,
             width: screenwidth*0.717,
               color: Color(ColorConstants.primary),
               child: Center(

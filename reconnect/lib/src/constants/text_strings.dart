@@ -5,5 +5,9 @@ class TextConstants{
   static const String WelcomeBack = "Welcome Back!";
   static const String rememberme = "remember me";
   static const String forgotpass = "forgot password?";
+  static const String SignTitle = "Create a new account";
+    static const String LoginAcc = "Already have an account?";
+
+
 
 }

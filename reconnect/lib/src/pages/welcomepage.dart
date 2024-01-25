@@ -4,6 +4,7 @@ import "package:reconnect/src/constants/colors.dart";
 import "package:reconnect/src/constants/image_strings.dart";
 import "package:reconnect/src/constants/text_strings.dart";
 import "package:reconnect/src/pages/loginPage.dart";
+import "package:reconnect/src/pages/signup.dart";
 import "package:reconnect/src/widgets/authenticate_button.dart";
 class WelcomePage extends StatelessWidget {
   final int scwidth;
@@ -56,7 +57,6 @@ class WelcomePage extends StatelessWidget {
                   ),
                   SizedBox(height: scheight*.038,),
                   Authbutton("Login", scheight, scwidth, () { 
-                    print("pressed login!!!");
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => LoginPage(scwidth: scwidth, scheight: scheight))
@@ -74,7 +74,10 @@ class WelcomePage extends StatelessWidget {
                           ),
                         GestureDetector(
                           onTap: () {
-                            print('Text Clicked');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => SignUp(scwidth: scwidth, scheight: scheight))
+                            );
                           },
                           child: Text(
                             'Sign Up',

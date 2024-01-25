@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
-import 'package:reconnect/src/pages/register_university.dart';
 import 'package:reconnect/src/widgets/input_field.dart';
 
 class AddUniversity extends StatefulWidget {

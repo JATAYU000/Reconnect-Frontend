@@ -9,36 +9,43 @@ import 'package:reconnect/src/widgets/authenticate_button.dart';
 import 'package:reconnect/src/widgets/check_box.dart';
 import 'package:reconnect/src/widgets/input_field.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   final int scwidth;
   final int scheight;
   
   
   LoginPage({super.key,required this.scwidth,required this.scheight});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController user_controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    TextEditingController user_controller = TextEditingController();
     return Scaffold(
       body: Container(
-        width: scwidth*0.999,
-        height: scheight*0.999,
+        width: widget.scwidth*0.999,
+        height: widget.scheight*0.999,
         child: Column(
           children: [
-            SizedBox(height: scheight*0.04),
+            SizedBox(height: widget.scheight*0.04),
             Container(
-              height: scheight*0.131,
-              width: scwidth*0.79,
+              height: widget.scheight*0.131,
+              width: widget.scwidth*0.79,
               child: Image.asset(ImgaeConstants.LogoText),
             ),
-            SizedBox(height: scheight*.028),
+            SizedBox(height: widget.scheight*.028),
             Text(
               TextConstants.WelcomeBack,
-              style: GoogleFonts.sora(color: Color(ColorConstants.primary), fontSize: scheight*0.042,fontWeight: FontWeight.bold),
+              style: GoogleFonts.sora(color: Color(ColorConstants.primary), fontSize: widget.scheight*0.042,fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: scheight*.028),
-            Userinput('Username', scwidth , scheight, user_controller),
-            SizedBox(height: scheight*.028),
-            Userinput('Password', scwidth , scheight, user_controller),
+            SizedBox(height: widget.scheight*.028),
+            Userinput('Username', widget.scwidth , widget.scheight, user_controller),
+            SizedBox(height: widget.scheight*.028),
+            Userinput('Password', widget.scwidth , widget.scheight, user_controller),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -48,14 +55,14 @@ class LoginPage extends StatelessWidget {
                     CheckBox(),
                     Text(
                       TextConstants.rememberme,
-                      style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: scheight*0.0190)
+                      style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.0190)
                     ),
                   ],
                 ),
                 TextButton(
                   child: Text(
                     TextConstants.forgotpass,
-                    style: GoogleFonts.sora(color: Color(ColorConstants.primary), fontSize: scheight*0.0190,fontWeight: FontWeight.bold),
+                    style: GoogleFonts.sora(color: Color(ColorConstants.primary), fontSize: widget.scheight*0.0190,fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
                 
@@ -63,24 +70,24 @@ class LoginPage extends StatelessWidget {
                 ),
               ],
             ),
-            Authbutton("Login", scheight, scwidth, () { 
+            Authbutton("Login", widget.scheight, widget.scwidth, () { 
               print("pressed login!!!");
             }),
-            SizedBox(height: scheight*.013),
+            SizedBox(height: widget.scheight*.013),
             Container(
-              height: scheight*0.241,
-              width: scwidth*0.99,
+              height: widget.scheight*0.241,
+              width: widget.scwidth*0.99,
               child: Image.asset(ImgaeConstants.login_page),
             ),   
-            SizedBox(height: scheight*.015,),    
+            SizedBox(height: widget.scheight*.015,),    
             SizedBox(
-              width: scwidth*0.717,
+              width: widget.scwidth*0.717,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
                     TextConstants.WelcomeAccount,
-                    style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: scheight*0.019,),
+                    style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.019,),
                     ),
                   GestureDetector(
                     onTap: () {
@@ -88,7 +95,7 @@ class LoginPage extends StatelessWidget {
                     },
                     child: Text(
                       'Sign Up',
-                      style: GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize: scheight*0.019,fontWeight: FontWeight.bold),
+                      style: GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize: widget.scheight*0.019,fontWeight: FontWeight.bold),
                     ),
                   ),
                 ]

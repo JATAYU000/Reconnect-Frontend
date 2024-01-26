@@ -4,6 +4,7 @@ import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
 import 'package:reconnect/src/models/institution.dart';
+import 'package:reconnect/src/pages/homepage.dart';
 import 'package:reconnect/src/pages/select_uni.dart';
 import 'package:reconnect/src/widgets/clg_list.dart';
 
@@ -51,7 +52,13 @@ class _DashboardState extends State<DashboardPage> {
                 itemCount: Dashboard.length,
                 itemBuilder: (context, index) {
                   return clollege_list(context, widget.scwidth, widget.scheight,index,Dashboard,
-                  () {});
+                  () {
+                    print("OOOOOOOOOOOOOOOOOOOO");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage(scwidth: widget.scwidth, scheight: widget.scheight))
+                    );
+                  });
                 }
               )
             ),

@@ -5,7 +5,6 @@ import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
 import 'package:reconnect/src/models/institution.dart';
 import 'package:reconnect/src/pages/dashboard.dart';
-import 'package:reconnect/src/pages/homepage.dart';
 import 'package:reconnect/src/widgets/clg_list.dart';
 import 'package:reconnect/src/widgets/input_field.dart';
 
@@ -47,12 +46,8 @@ class _AddUniversityState extends State<AddUniversity> {
               width: widget.scwidth * 0.852,
               height:widget.scheight*0.10,
               child: clollege_list(context, widget.scwidth, widget.scheight,widget.index, InstitutionList,
-              () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomePage(scwidth: widget.scwidth, scheight: widget.scheight))
-                  );
-                  }),
+              () {}
+                  ),
             ),
             Container(
               height: widget.scheight*0.246,

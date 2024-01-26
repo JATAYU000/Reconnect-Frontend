@@ -18,6 +18,7 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardState extends State<DashboardPage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,34 +84,6 @@ class _DashboardState extends State<DashboardPage> {
         )
         )
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-              color: Color(ColorConstants.primary),
-              blurRadius: 10,
-            ),
-          ],
-        ),
-        child: BottomNavigationBar(
-          elevation: 10,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.ac_unit,color: Color(ColorConstants.primary),),
-              label: "text"
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.access_alarm,color: Color(ColorConstants.primary),),
-              label: "text"
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.access_alarm,color: Color(ColorConstants.primary),),
-              label: "text"
-            ),
-          ],
-        ),
-      ),
-
     );
   }
 }

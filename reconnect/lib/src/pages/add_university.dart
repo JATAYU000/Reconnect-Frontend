@@ -4,9 +4,9 @@ import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
 import 'package:reconnect/src/models/institution.dart';
-import 'package:reconnect/src/pages/dashboard.dart';
 import 'package:reconnect/src/widgets/clg_list.dart';
 import 'package:reconnect/src/widgets/input_field.dart';
+import 'package:reconnect/src/widgets/navigationbar.dart';
 
 class AddUniversity extends StatefulWidget {
   final int scwidth;
@@ -73,7 +73,7 @@ class _AddUniversityState extends State<AddUniversity> {
                      year: AddYear.text));
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => DashboardPage(scwidth: widget.scwidth, scheight: widget.scheight, 
+                    MaterialPageRoute(builder: (context) => NavBar(scwidth: widget.scwidth, scheight: widget.scheight, 
                     ))
                   );
                      }

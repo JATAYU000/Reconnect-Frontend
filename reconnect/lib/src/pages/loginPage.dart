@@ -3,12 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reconnect/src/constants/colors.dart';
+import 'package:reconnect/src/constants/globals.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
+import 'package:reconnect/src/pages/dashboard.dart';
 import 'package:reconnect/src/pages/signup.dart';
 import 'package:reconnect/src/widgets/authenticate_button.dart';
 import 'package:reconnect/src/widgets/check_box.dart';
 import 'package:reconnect/src/widgets/input_field.dart';
+import 'package:reconnect/src/models/user.dart';
+import 'package:reconnect/src/shared_pref/shared_prefs.dart' as sp;
+
+
 
 class LoginPage extends StatefulWidget {
   final int scwidth;
@@ -24,7 +30,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController user_controller = TextEditingController();
   TextEditingController pass_controller = TextEditingController();
-
+  TextEditingController email_controller = TextEditingController();
+  late Future<String> token;
+  bool success =false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,9 +53,11 @@ class _LoginPageState extends State<LoginPage> {
               TextConstants.WelcomeBack,
               style: GoogleFonts.sora(color: Color(ColorConstants.primary), fontSize: widget.scheight*0.042,fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: widget.scheight*.03),
+            SizedBox(height: widget.scheight*.01),
             Userinput('Username', widget.scheight , widget.scwidth, user_controller),
-            SizedBox(height: widget.scheight*.03),
+            SizedBox(height: widget.scheight*.01),
+            Userinput('Email', widget.scheight , widget.scwidth, email_controller),
+            SizedBox(height: widget.scheight*.01),
             Userinput('Password', widget.scheight , widget.scwidth, pass_controller),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -73,8 +83,22 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
-            Authbutton("Login", widget.scheight, widget.scwidth, () { 
-              print("pressed login!!!");
+            Authbutton("Login", widget.scheight, widget.scwidth, ()  { 
+              print("pressed login!!!${isLoggedIn}");
+              setState(() async {
+                try{
+                  token = fetchUserPost(user_controller.text, email_controller.text, pass_controller.text);
+                  print(await token);
+                sp.addString('token', await token);
+                sp.addString('username', user_controller.text);
+                success = true;
+                 Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DashboardPage(scwidth: widget.scwidth, scheight: widget.scheight))
+                    );
+                } catch(e) {print(e);};
+              });
+
             }),
             SizedBox(height: widget.scheight*.013),
             Container(

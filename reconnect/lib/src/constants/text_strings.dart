@@ -14,7 +14,6 @@ class TextConstants{
   static const String InstittueListed="Institute not listed?";
   static const String DashTitle="Hello <username>!";
   static const String DashSub="Add  institute to dashboard";
-
-
+  static const String HomeEvent ="Explore events";
 
 }

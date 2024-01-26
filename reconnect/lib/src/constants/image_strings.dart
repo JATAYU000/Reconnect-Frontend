@@ -11,4 +11,12 @@ class ImageConstants{
   static const String ColAmt = 'assets/logos/college3.png';
   static const String ColIit = 'assets/logos/college4.png';
   static const String DashImg = 'assets/images/image4.png';
+  static const String NavHome = 'assets/images/home-icon.png';
+  static const String NavNoti = 'assets/images/notifiaction_icon.png';
+  static const String NavProfile = 'assets/images/profile_icon.png';
+  static const String CollegeMail = 'assets/images/mail_icon.png';
+  static const String CollegeLink = 'assets/images/linked_icon.png';
+  static const String CollegeSite = 'assets/images/website_icon.png';
+
+
 }

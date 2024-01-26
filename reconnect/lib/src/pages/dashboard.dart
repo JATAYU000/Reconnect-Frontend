@@ -18,6 +18,7 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardState extends State<DashboardPage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,41 +84,6 @@ class _DashboardState extends State<DashboardPage> {
         )
         )
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-              color: Color(ColorConstants.primary),
-              blurRadius: 10,
-            ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(30),
-          child: BottomNavigationBar(
-            backgroundColor: Color(ColorConstants.secondary),
-            items: const [
-              BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(ImageConstants.NavProfile),
-                color: Color(ColorConstants.primary)),
-                label: "Profile"
-                
-              ),
-              BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(ImageConstants.NavHome),
-                color: Color(ColorConstants.primary)),
-                label: "Home"
-              ),
-              BottomNavigationBarItem(
-                icon:ImageIcon(AssetImage(ImageConstants.NavNoti),
-                color: Color(ColorConstants.primary)),
-                label: "Notification"
-              ),
-            ],
-          ),
-        ),
-      ),
-
     );
   }
 }

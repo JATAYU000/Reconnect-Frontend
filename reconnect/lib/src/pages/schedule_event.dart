@@ -55,7 +55,7 @@ class _ScheduleEvent extends State<ScheduleEvent> {
                 Container(
                         height: widget.scheight*0.14,
                         width: widget.scwidth*0.27,
-                        child: Image.asset(ImageConstants.ScheduleEvent),
+                        child: Image.asset(ImageConstants.Description_Event),
             ),
               ],
                 ),

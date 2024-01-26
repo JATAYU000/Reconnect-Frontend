@@ -92,22 +92,29 @@ class _DashboardState extends State<DashboardPage> {
             ),
           ],
         ),
-        child: BottomNavigationBar(
-          elevation: 10,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.ac_unit,color: Color(ColorConstants.primary),),
-              label: "text"
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.access_alarm,color: Color(ColorConstants.primary),),
-              label: "text"
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.access_alarm,color: Color(ColorConstants.primary),),
-              label: "text"
-            ),
-          ],
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: BottomNavigationBar(
+            backgroundColor: Color(ColorConstants.secondary),
+            items: const [
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage(ImageConstants.NavProfile),
+                color: Color(ColorConstants.primary)),
+                label: "Profile"
+                
+              ),
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage(ImageConstants.NavHome),
+                color: Color(ColorConstants.primary)),
+                label: "Home"
+              ),
+              BottomNavigationBarItem(
+                icon:ImageIcon(AssetImage(ImageConstants.NavNoti),
+                color: Color(ColorConstants.primary)),
+                label: "Notification"
+              ),
+            ],
+          ),
         ),
       ),
 

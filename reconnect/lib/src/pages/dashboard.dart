@@ -7,6 +7,7 @@ import 'package:reconnect/src/models/institution.dart';
 import 'package:reconnect/src/pages/homepage.dart';
 import 'package:reconnect/src/pages/select_uni.dart';
 import 'package:reconnect/src/widgets/clg_list.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DashboardPage extends StatefulWidget {
   final int scwidth;
@@ -18,6 +19,22 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardState extends State<DashboardPage> {
+
+
+
+  late String username;
+  @override
+  void initState() {
+    super.initState();
+    _loadPreferences();
+  }
+
+  void _loadPreferences() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      username = prefs.getString('username') ?? "none";
+    });
+  }
   
   @override
   Widget build(BuildContext context) {

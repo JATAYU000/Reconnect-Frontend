@@ -40,6 +40,7 @@ class _NotificationsState extends State<Notifications> {
               width: widget.scwidth*0.485,
               child: Image.asset(ImageConstants.Signimgae),
             ),
+            
 
 
             ],

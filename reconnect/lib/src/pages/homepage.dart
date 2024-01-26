@@ -100,11 +100,7 @@ class _HomePageState extends State<HomePage> {
                   itemCount: EventList.length,
                   itemBuilder: (context, index) {
                     return EventBox(context, widget.scwidth, widget.scheight,index,EventList,
-                    () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => AddUniversity(scwidth: widget.scwidth, scheight: widget.scheight,index: index))
-                      // );
+                    () {   
                     }
                     );
         

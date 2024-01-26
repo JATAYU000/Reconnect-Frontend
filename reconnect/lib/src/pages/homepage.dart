@@ -6,6 +6,8 @@ import 'package:reconnect/src/constants/text_strings.dart';
 import 'package:reconnect/src/models/events.dart';
 import 'package:reconnect/src/models/institution.dart';
 import 'package:reconnect/src/widgets/events.dart';
+import 'package:reconnect/src/pages/schedule_event.dart';
+
 class HomePage extends StatefulWidget {
   final int scwidth;
   final int scheight;
@@ -112,7 +114,10 @@ class _HomePageState extends State<HomePage> {
               Center(
                 child: GestureDetector(
                 onTap: () {
-
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>ScheduleEvent(scwidth: widget.scwidth, scheight: widget.scheight,))
+                  );
                 },
                 child: Container(
                   height:widget.scheight*0.0854,

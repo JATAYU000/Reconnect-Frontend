@@ -1,4 +1,4 @@
-class ImageConstants{
+class ImageConstants {
   static const String welcomeImage = "assets/images/welcomeImage.jpg";
   static const String LogoText = "assets/images/logo_with_title.png";
   static const String Logo = "assets/images/logo.png";
@@ -17,6 +17,5 @@ class ImageConstants{
   static const String CollegeMail = 'assets/images/mail_icon.png';
   static const String CollegeLink = 'assets/images/linked_icon.png';
   static const String CollegeSite = 'assets/images/website_icon.png';
-
-
+  static const String ScheduleEvent = 'assets/images/image-7.png';
 }

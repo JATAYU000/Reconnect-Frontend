@@ -25,7 +25,7 @@ SizedBox ReuseButton(
                 child: Text(
                   text,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.sora(color: Colors.white, fontSize: 12,),
+                  style: GoogleFonts.sora(color: Colors.white, fontSize: 17,),
                 ),
               ),
         

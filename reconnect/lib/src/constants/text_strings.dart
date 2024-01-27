@@ -18,6 +18,10 @@ class TextConstants{
   static const String About ="About you";
   static const String Profile ="Profile";
   static const String Notification ="Notifications";
+  static const String ViewEvent ="View Event";
+  static const String ScheduleEvent ="Schedule event";
+  static const String Description ="Description";
+
 
 
 }

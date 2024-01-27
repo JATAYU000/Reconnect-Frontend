@@ -17,6 +17,13 @@ class ImageConstants{
   static const String CollegeMail = 'assets/images/mail_icon.png';
   static const String CollegeLink = 'assets/images/linked_icon.png';
   static const String CollegeSite = 'assets/images/website_icon.png';
+  static const String Event = 'assets/images/image-6.png';
+  static const String Description = 'assets/images/Image-5.png';
+  static const String Host = 'assets/images/image-9.png';
+  static const String Description_Event = 'assets/images/image-7.png';
+
+
+
 
 
 }

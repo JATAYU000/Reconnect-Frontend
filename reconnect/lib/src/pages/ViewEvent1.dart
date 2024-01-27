@@ -56,15 +56,15 @@ class _Event_DescriptionState extends State<Event_Description> {
                       style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.023,fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "Event Date:${widget.event.date}",
+                      "Event Date:${widget.event.eventDate}",
                       style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.019,),
                     ),
                     Text(
-                      "Department: ${widget.event.dept}",
+                      "Department: ${widget.event.department}",
                       style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.019,),
                     ),
                     Text(
-                      "Pass Out Year:${widget.event.year}",
+                      "Pass Out Year:${widget.event.passOutYear}",
                       style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.019,),
                     ),
                     Text(
@@ -72,7 +72,7 @@ class _Event_DescriptionState extends State<Event_Description> {
                       style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.019,),
                     ),
                     Text(
-                      "Time: ${widget.event.time}",
+                      "Time: ${widget.event.eventTime}",
                       style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.019,),
                     ),
                   ],

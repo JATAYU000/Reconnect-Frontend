@@ -7,6 +7,6 @@ class Queries {
   Queries({required this.ProfileIcon,required this.PostDeatials,required this.username});
 }
 List<Queries>QueryList=[
-  Queries(ProfileIcon: ImageConstants.NavProfile, PostDeatials: "Lets meet!!!.",username: "Kumar"),
-  Queries(ProfileIcon: ImageConstants.NavProfile, PostDeatials: "Hell Yeah!!!!!!.",username: "Atharva"),
+  Queries(ProfileIcon: ImageConstants.NavProfile, PostDeatials: "Lets meet!!!.",username: "Shrivatva"),
+  Queries(ProfileIcon: ImageConstants.NavProfile, PostDeatials: "What's the time? ",username: "Goutham"),
 ];

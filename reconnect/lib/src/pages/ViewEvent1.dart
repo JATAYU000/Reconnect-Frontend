@@ -4,6 +4,8 @@ import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
 import 'package:reconnect/src/models/events.dart';
+import 'package:reconnect/src/models/participants.dart';
+import 'package:reconnect/src/models/queries.dart';
 import 'package:reconnect/src/widgets/ReuseButton.dart';
 import 'package:reconnect/src/widgets/tabbarview.dart';
 class Event_Description extends StatefulWidget {
@@ -19,6 +21,7 @@ class Event_Description extends StatefulWidget {
 }
 
 class _Event_DescriptionState extends State<Event_Description> {
+  TextEditingController _updatetext = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,7 +126,215 @@ class _Event_DescriptionState extends State<Event_Description> {
               
             ),
           ),
-          barview(widget.scwidth, widget.scheight,widget.event)
+          Expanded(
+            child: TabBarView(children: [
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(height:100),
+                      SizedBox(width: 30,),
+                      Text(
+                        "Description",
+                        style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.042,fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(width: 20,),
+                      Container(
+                        width: widget.scwidth*0.154,
+                        height: widget.scheight*0.127,
+                        child: Image.asset(ImageConstants.Description),
+                      )
+                    ],
+                  ),
+                  SizedBox(height:50),
+                  Text(
+                    widget.event.description,
+                    style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.033,),
+
+                  )
+
+                ],
+
+              ),
+             SingleChildScrollView(
+               child: Column(
+                children: [
+                  SizedBox(height:20),
+                  Container(
+                    width: widget.scwidth*0.84,
+                    height: widget.scheight*0.064,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: Color(ColorConstants.primary),
+                        width: 2,
+                      )
+                    ),
+                    child:Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          width: widget.scwidth*0.2,
+                          height: widget.scheight*0.038,
+                          child: Image.asset(ImageConstants.NavProfile),
+                        ),
+                        Expanded(
+                          child: TextField(
+                            controller: _updatetext,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(borderSide: BorderSide.none),
+                              hintStyle: TextStyle(color: Color(ColorConstants.fontcolor).withOpacity(0.45)),
+                              hintText: "Post your queries"
+                            ),
+                          ),
+                        ),
+                        FloatingActionButton(
+                          child: Icon(Icons.add),
+                          backgroundColor: Color(ColorConstants.primary),
+                          foregroundColor: Colors.white,
+                          onPressed: () {
+                            String eneteredtext = _updatetext.text;
+                            if (eneteredtext.isNotEmpty){
+                              setState((){
+                                QueryList.add(Queries(ProfileIcon: ImageConstants.NavProfile, PostDeatials: eneteredtext, username: "Your username"));
+                                _updatetext.clear();
+                              });
+                            }
+                          },
+                        )
+               
+                      ],
+
+                    )
+                  ),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: QueryList.length,
+                    itemBuilder: (context,index){
+                      Queries query=QueryList[index];
+                      return Container(
+                        child: Column(children: [
+                          SizedBox(width: 20,),
+                          Row(
+                            children: [
+                              Container(
+                            width: widget.scwidth*0.2,
+                            height: widget.scheight*0.038,
+                            child: Image.asset(query.ProfileIcon),
+                          ),
+                          Text(
+                            query.username,
+                            style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.023,fontWeight: FontWeight.bold),
+                          )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(width: 40,),
+                              Text(
+                                query.PostDeatials,
+                                style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize:16),
+
+                              )
+                            ],
+                          )
+                          
+                        ],),
+                      );
+                    },
+                  )
+
+
+                ],
+               ),
+             ),
+              
+
+
+
+
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        SizedBox(width:50),
+                        Text(
+                          "Host",
+                          style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.042,fontWeight: FontWeight.bold),
+                          
+                        ),
+                        SizedBox(width:30),
+                        Container(
+                          width: widget.scwidth*0.154,
+                          height: widget.scheight*0.107,
+                          child: Image.asset(ImageConstants.Host),
+                        )
+                        
+                      ],
+                
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(width:50),
+                        Container(
+                          width: widget.scwidth*0.071,
+                          height: widget.scheight*0.038,
+                          child: Image.asset(ImageConstants.NavProfile),
+                        ),
+                        SizedBox(width:15),
+                        Text(
+                          "Atharva",
+                          style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.022,fontWeight: FontWeight.bold),
+                
+                        )
+                      ],
+                      
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        SizedBox(width:50),
+                        Text(
+                          "Participants",
+                          textAlign: TextAlign.start,
+                              style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.042,fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: participantList.length,
+                      itemBuilder: (context, index) {
+                        Participants participant = participantList[index];
+                        return Row(
+                      children: [
+                        SizedBox(width:50),
+                        Container(
+                          width: widget.scwidth*0.071,
+                          height: widget.scheight*0.038,
+                          child: Image.asset(participant.profileImage),
+                        ),
+                        SizedBox(width:15),
+                        Text(
+                          participant.name,
+                          style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.022,fontWeight: FontWeight.bold),
+                
+                        )
+                      ],
+                      
+                    );
+
+                        
+                      },
+                    )
+                
+                
+                  ],
+                ),
+              )
+            ]),
+        )
         ],
       )),
     ),

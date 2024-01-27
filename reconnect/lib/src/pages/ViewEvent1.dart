@@ -7,6 +7,7 @@ import 'package:reconnect/src/models/events.dart';
 import 'package:reconnect/src/models/participants.dart';
 import 'package:reconnect/src/models/queries.dart';
 import 'package:reconnect/src/widgets/ReuseButton.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class Event_Description extends StatefulWidget {
 
   final int scwidth;
@@ -20,7 +21,22 @@ class Event_Description extends StatefulWidget {
 }
 
 class _Event_DescriptionState extends State<Event_Description> {
+    late String username;
+
   TextEditingController _updatetext = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    _loadPreferences();
+  }
+  void _loadPreferences() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      username = prefs.getString('username') ?? 'Shrivaths';
+      // _islog =false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -195,7 +211,7 @@ class _Event_DescriptionState extends State<Event_Description> {
                             String eneteredtext = _updatetext.text;
                             if (eneteredtext.isNotEmpty){
                               setState((){
-                                QueryList.add(Queries(ProfileIcon: ImageConstants.NavProfile, PostDeatials: eneteredtext, username: "Surendran"));
+                                QueryList.add(Queries(ProfileIcon: ImageConstants.NavProfile, PostDeatials: eneteredtext, username: username));
                                 _updatetext.clear();
                               });
                             }

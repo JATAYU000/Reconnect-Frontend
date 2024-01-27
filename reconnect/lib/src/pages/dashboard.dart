@@ -53,7 +53,7 @@ class _DashboardState extends State<DashboardPage> {
                   ),
             SizedBox(height: widget.scheight*.019,),
             Text(
-              TextConstants.DashTitle,
+              'Hello ${username}!',
               style: GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize: widget.scheight*0.038,fontWeight: FontWeight.bold),
               ),
             SizedBox(height: widget.scheight*0.03,),
@@ -86,9 +86,10 @@ class _DashboardState extends State<DashboardPage> {
                 iconSize: widget.scheight*0.0514,
                 color: Color(ColorConstants.primary),
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) =>SelectUni(scwidth: widget.scwidth, scheight: widget.scheight,))
+                    MaterialPageRoute(builder: (context) =>SelectUni(scwidth: widget.scwidth, scheight: widget.scheight,)),
+                    (route) => false,
                   );
                 }
               )

@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
+import 'package:reconnect/src/models/events.dart';
+import 'package:reconnect/src/pages/homepage.dart';
 import 'package:reconnect/src/widgets/event_input.dart';
 import 'package:reconnect/src/widgets/event_description.dart';
 import 'package:reconnect/src/widgets/ReuseButton.dart';
@@ -80,7 +82,23 @@ class _ScheduleEvent extends State<ScheduleEvent> {
             SizedBox(height: widget.scheight*.02,),
             DescriptionWidget(scwidth: widget.scwidth, scheight: widget.scheight, Description: _descriptionController),  
             SizedBox(height: widget.scheight*.01,),
-            ReuseButton("Schedule", widget.scheight*0.07 , widget.scwidth*0.54,() { }),
+            ReuseButton("Schedule", widget.scheight*0.07 , widget.scwidth*0.54,() { 
+              EventList.add(Events(colindex: EventList.length,
+               heading: heading_controller.text, 
+               username: "Shrivaths", 
+               passOutYear: pass_controller.text, 
+               location: location_controller.text, 
+               eventDate: date_controller.text, 
+               description: _descriptionController.text, 
+               department: department_controller.text, 
+               eventTime: time_controller.text));
+               Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage(scwidth: widget.scwidth, scheight: widget.scheight)),
+
+                      (route) => false,
+                    );
+            }),
           ],
                 ),
                ),

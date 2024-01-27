@@ -69,7 +69,7 @@ List<Events> EventList = [
    heading: "reunion ",
     username: "gamma",
      passOutYear: "2017",
-     location: "Kumaran park, chennai",
+     location: "kollam",
      eventDate: "12/12/12",
      description: "meetuop",
      department: "cys",
@@ -81,13 +81,13 @@ List<Events> UpdatedEvents = EventList;
 
 
 Future <List<Events>> getData() async {
-  final response = await http.get(Uri.parse('http://192.168.181.221:8000/api/data/'));
+  final response = await http.get(Uri.parse('http://192.168.181.30:8000/api/data/'));
   var data = jsonDecode(response.body.toString());
   print(data);
   print(("Status code is  === ${response.statusCode}"));
   if(response.statusCode == 200) {
     for(Map<String, dynamic> index in data){
-      //  print(EventList.length);
+       print(EventList.length);
       EventList.add(Events.fromMap(index));
       // print(EventList.length);
       // EventList.add(Events(colindex: Events.fromMap(index).colindex,

@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   }
   _load(){
     getData().then((data){
-      print('Length:  ${UpdatedEvents[2].heading}');
+      // print('Length:  ${UpdatedEvents[2].heading}');
       return data;
     });
   }

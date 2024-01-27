@@ -7,7 +7,6 @@ import 'package:reconnect/src/models/events.dart';
 import 'package:reconnect/src/models/participants.dart';
 import 'package:reconnect/src/models/queries.dart';
 import 'package:reconnect/src/widgets/ReuseButton.dart';
-import 'package:reconnect/src/widgets/tabbarview.dart';
 class Event_Description extends StatefulWidget {
 
   final int scwidth;
@@ -196,7 +195,7 @@ class _Event_DescriptionState extends State<Event_Description> {
                             String eneteredtext = _updatetext.text;
                             if (eneteredtext.isNotEmpty){
                               setState((){
-                                QueryList.add(Queries(ProfileIcon: ImageConstants.NavProfile, PostDeatials: eneteredtext, username: "Your username"));
+                                QueryList.add(Queries(ProfileIcon: ImageConstants.NavProfile, PostDeatials: eneteredtext, username: "Surendran"));
                                 _updatetext.clear();
                               });
                             }

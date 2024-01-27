@@ -91,6 +91,8 @@ class _LoginPageState extends State<LoginPage> {
                   print(await token);
                 sp.addString('token', await token);
                 sp.addString('username', user_controller.text);
+                sp.addString('email', email_controller.text);
+                sp.addString('password', pass_controller.text);
                 success = true;
                  Navigator.push(
                       context,

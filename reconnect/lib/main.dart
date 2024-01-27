@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reconnect/src/constants/globals.dart';
+import 'package:reconnect/src/pages/dashboard.dart';
 import 'package:reconnect/src/pages/homepage.dart';
 import 'package:reconnect/src/pages/welcomepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -45,7 +46,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Trail Tales',
       theme: ThemeData(),
-      home: _islog ? HomePage(scwidth: width, scheight: height) : WelcomePage(scwidth: width, scheight: height) 
+      home: _islog ? DashboardPage(scwidth: width, scheight: height) : WelcomePage(scwidth: width, scheight: height) 
     );
   }
 }

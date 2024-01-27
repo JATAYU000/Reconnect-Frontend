@@ -11,13 +11,30 @@ import 'package:reconnect/src/pages/schedule_event.dart';
 class HomePage extends StatefulWidget {
   final int scwidth;
   final int scheight;
+  
+  
   const HomePage({super.key, required this.scwidth,required this.scheight,});
 
-  @override
+  @override     
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Events> UpdatedEvents = [];
+
+   @override
+  void initState() {
+    super.initState();
+      _load();
+    
+    
+  }
+  _load(){
+    getData().then((data){
+      print('Length:  ${UpdatedEvents[2].heading}');
+      return data;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,6 +116,7 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                   itemCount: EventList.length,
                   itemBuilder: (context, index) {
+                    print("this is the problem${UpdatedEvents.length}");
                     return EventBox(context, widget.scwidth, widget.scheight,index,EventList,
                     () {   
                     }

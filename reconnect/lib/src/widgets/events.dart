@@ -13,6 +13,7 @@ final int index,
 final List<Events> list,
 final VoidCallback callback,
 ) {
+  print("datalen : ${list.length}");
   return Row(
     children: [
       GestureDetector(
@@ -55,7 +56,7 @@ final VoidCallback callback,
                   border: Border.all(width: 2.0,color: Color(ColorConstants.fontcolor)),
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
-                child: Center(child: Text(list[index].time,style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor), fontSize: scheight*0.015))),),
+                child: Center(child: Text(list[index].eventTime,style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor), fontSize: scheight*0.015))),),
                 Container(
                 height: scheight*0.038,
                 width: scwidth*0.194,
@@ -63,7 +64,7 @@ final VoidCallback callback,
                   border: Border.all(width: 2.0,color: Color(ColorConstants.fontcolor)),
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
-                child: Center(child: Text(list[index].year,style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor), fontSize: scheight*0.015))),),
+                child: Center(child: Text(list[index].passOutYear,style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor), fontSize: scheight*0.015))),),
                 Container(
                 height: scheight*0.038,
                 width: scwidth*0.194,
@@ -71,7 +72,7 @@ final VoidCallback callback,
                   border: Border.all(width: 2.0,color: Color(ColorConstants.fontcolor)),
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
-                child: Center(child: Text(list[index].dept,style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor), fontSize: scheight*0.015,),)),),
+                child: Center(child: Text(list[index].department,style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor), fontSize: scheight*0.015,),)),),
                 ],
         
               )  

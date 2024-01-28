@@ -15,65 +15,71 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  int _index=0;
-  late List<Widget> screen;
+  int _index=1;
+  late PageController _pagenavigation;
 
   @override
   void initState(){
     super.initState();
-    _index=1;
-    screen=[
-    Profile(scwidth: widget.scwidth, scheight: widget.scheight),
-    DashboardPage(scwidth: widget.scwidth, scheight: widget.scheight),
-    Notifications(scwidth: widget.scwidth, scheight: widget.scheight)
+    _pagenavigation=PageController(initialPage: _index);
     
-  ];
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screen[_index],
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-              color: Color(ColorConstants.primary),
-              blurRadius: 10,
-            ),
-          ],
-        ),
-        child: ClipRRect(
+      body: PageView(
+        controller: _pagenavigation,
+        onPageChanged: (index){
+          setState(() {
+            _index=index;
+          });
+        },
+        children: [Profile(scwidth: widget.scwidth, scheight: widget.scheight),
+        DashboardPage(scwidth: widget.scwidth, scheight: widget.scheight),
+        Notifications(scwidth: widget.scwidth, scheight: widget.scheight)],
+      ),
+      bottomNavigationBar:  ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: BottomNavigationBar(
             backgroundColor: Color(ColorConstants.secondary),
             onTap:(index){
-              setState(() {
-                _index=index;
-              });
+                _pagenavigation.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+                
+              
             } ,
+            currentIndex: _index,
             items: const [
+              
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(ImageConstants.NavProfile),
-                color: Color(ColorConstants.primary)),
-                label: ""
+                
+                icon: ImageIcon(AssetImage(ImageConstants.NavProfile)),
+                label:"",
+                
+                
                 
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(ImageConstants.NavHome),
-                color: Color(ColorConstants.primary)),
+                icon: ImageIcon(AssetImage(ImageConstants.NavHome)),
                 label: ""
               ),
               BottomNavigationBarItem(
                 
-                icon:ImageIcon(AssetImage(ImageConstants.NavNoti),
-                color: Color(ColorConstants.primary)),
+                icon:ImageIcon(AssetImage(ImageConstants.NavNoti)),
                 label: ""
               ),
             ],
+            selectedFontSize: 0,
+            selectedItemColor: Color(ColorConstants.primary),
+            unselectedItemColor:Color(ColorConstants.fontcolor).withOpacity(0.45), 
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+
+
           ),
         ),
-      ),
     );
+      
+    
   }
 }

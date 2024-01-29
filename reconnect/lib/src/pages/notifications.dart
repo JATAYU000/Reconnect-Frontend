@@ -35,14 +35,6 @@ class _NotificationsState extends State<Notifications> {
               style: GoogleFonts.sora(color: Color(ColorConstants.primary), fontSize: widget.scheight*0.042,fontWeight: FontWeight.bold),
             ),
             SizedBox(height: widget.scheight*.03),
-            Container(
-              height: widget.scheight*0.239,
-              width: widget.scwidth*0.485,
-              child: Image.asset(ImageConstants.Signimgae),
-            ),
-            
-
-
             ],
           )
         )   

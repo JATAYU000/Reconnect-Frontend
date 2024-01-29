@@ -38,12 +38,8 @@ class _RegisterUniState extends State<RegisterUni> {
               style: GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize: widget.scheight*0.038,fontWeight: FontWeight.bold),
               ),
             SizedBox(height: widget.scheight*0.03,),
-            Userinput("Institution name", widget.scheight, widget.scwidth, RegUni),
-            Container(
-                    height: widget.scheight*0.442,
-                    width: widget.scwidth*0.483,
-                    child: Image.asset(ImageConstants.RegUni),
-                  ),
+            Userinput("Institution name", widget.scheight, widget.scwidth, RegUni,false),
+            SizedBox(height: widget.scheight*0.04),
             Authbutton("Request", widget.scheight, widget.scwidth, () { print("Requested: !!");})
           ]
         )

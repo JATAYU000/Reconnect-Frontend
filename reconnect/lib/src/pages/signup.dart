@@ -44,13 +44,13 @@ class _SignUpState extends State<SignUp> {
               style: GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize: widget.scheight*0.038,fontWeight: FontWeight.bold),
               ),
             SizedBox(height: widget.scheight*0.03,),
-            Userinput("Username", widget.scheight, widget.scwidth, SignUsername),
+            Userinput("Username", widget.scheight, widget.scwidth, SignUsername,false),
             SizedBox(height: widget.scheight*0.03,),
-            Userinput("Name", widget.scheight, widget.scwidth, SignName),
+            Userinput("Name", widget.scheight, widget.scwidth, SignName,false),
             SizedBox(height: widget.scheight*0.03,),
-            Userinput("Email", widget.scheight, widget.scwidth, SignEmail),
+            Userinput("Email", widget.scheight, widget.scwidth, SignEmail,false),
             SizedBox(height: widget.scheight*0.03,),
-            Userinput("Password", widget.scheight, widget.scwidth, SignPassword),
+            Userinput("Password", widget.scheight, widget.scwidth, SignPassword,true),
             SizedBox(height: widget.scheight*0.03,),
             Authbutton("Register", widget.scheight, widget.scwidth, () {
               Navigator.push(

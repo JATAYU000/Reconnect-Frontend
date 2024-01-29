@@ -60,11 +60,11 @@ class _LoginPageState extends State<LoginPage> {
               child: Image.asset(ImageConstants.login_page),
             ), 
             SizedBox(height: widget.scheight*.01),
-            Userinput('Username', widget.scheight , widget.scwidth, user_controller),
+            Userinput('Username', widget.scheight , widget.scwidth, user_controller, false),
             SizedBox(height: widget.scheight*.01),
-            Userinput('Email', widget.scheight , widget.scwidth, email_controller),
+            Userinput('Email', widget.scheight , widget.scwidth, email_controller,false),
             SizedBox(height: widget.scheight*.01),
-            Userinput('Password', widget.scheight , widget.scwidth, pass_controller),
+            Userinput('Password', widget.scheight , widget.scwidth, pass_controller,true),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

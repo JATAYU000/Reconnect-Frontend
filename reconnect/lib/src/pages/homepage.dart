@@ -45,102 +45,119 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Container(
-                      height: widget.scheight*0.131,
+                      height: widget.scheight*0.101,
                       width: widget.scwidth*0.79,
                       child: Image.asset(ImageConstants.LogoText),
                     ),
-              SizedBox(height: widget.scheight*.019,),
+              SizedBox(height: widget.scheight*.015,),
               SizedBox(
                 width: widget.scwidth * 0.852,
-                height:widget.scheight*0.28,
+                height:widget.scheight*0.33,
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 20),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 2.0,color: Color(ColorConstants.primary)),
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                    ),
-                    height: widget.scheight*0.21,
-                    child:Column(
+                  child:Column(
                             children: [
                               SizedBox(height: widget.scheight*0.016,),
                               Container(
                                  width: widget.scwidth * 0.3,
-                                height:widget.scheight*0.150,
+                                height:widget.scheight*0.140,
                                 child: Image.asset(InstitutionList[2].instituteIcon,width: widget.scwidth*0.108,),
                               ),
                               SizedBox(height: widget.scheight*0.015,),
                               Text(InstitutionList[2].name,
                               style:  GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize:widget.scheight*0.019,fontWeight: FontWeight.bold),
-                              )
-                            ],
-                        )
-                    ),
-                )
-              ),
-              Row(
+                              ),
+                              SizedBox(height: widget.scheight*0.015,),
+                              Row(
                   children: [
-                    SizedBox(width: widget.scwidth*0.295,),
+                    SizedBox(width: widget.scwidth*0.265,),
                     Container(
-                      height: widget.scheight*0.058,
-                      width:widget.scwidth*0.1,
+                      height: widget.scheight*0.038,
+                      width:widget.scwidth*0.08,
                       child: GestureDetector(
                         onTap: () {},
                         child: Image.asset(ImageConstants.CollegeMail)),
                     ),
                     SizedBox(width: widget.scwidth*0.05,),
                     Container(
-                      height: widget.scheight*0.058,
-                      width:widget.scwidth*0.1,
+                      height: widget.scheight*0.038,
+                      width:widget.scwidth*0.08,
                       child: GestureDetector(
                         onTap: () {},
                         child: Image.asset(ImageConstants.CollegeLink)),
                     ),
                     SizedBox(width: widget.scwidth*0.05,),
                     Container(
-                      height: widget.scheight*0.058,
-                      width:widget.scwidth*0.1,
+                      height: widget.scheight*0.038,
+                      width:widget.scwidth*0.08,
                       child: GestureDetector(
                         onTap: () {},
                         child: Image.asset(ImageConstants.CollegeSite)),
                     ),
-                  ]),
+                  ])
+                            ],
+                        )
+                    ),
+                ),
+              
+              
               Text(
                 TextConstants.HomeEvent,
                 style: GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize: widget.scheight*0.038,fontWeight: FontWeight.bold),
                 ),
-              SizedBox(
-                width: widget.scwidth * 0.915,
-                height:widget.scheight*0.20,
-                child:ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: EventList.length,
-                  itemBuilder: (context, index) {
-                    print("this is the problem${UpdatedEvents.length}");
-                    return EventBox(context, widget.scwidth, widget.scheight,index,EventList,
-                    () {   
-                    }
-                    );
-        
-                  }
-                )
+              SizedBox(height: widget.scheight*0.042,),  
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    SizedBox(width:30),
+                    SizedBox(
+                      width: widget.scwidth * 1,
+                      height:widget.scheight*0.25,
+                      child:ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: EventList.length,
+                        itemBuilder: (context, index) {
+                          print("this is the problem${UpdatedEvents.length}");
+                          return EventBox(context, widget.scwidth, widget.scheight,index,EventList,
+                          () {}
+                          );
+                            
+                        }
+                      )
+                    ),
+                  ],
+                ),
               ),
-              Center(
-                child: GestureDetector(
-                onTap: () {
-                   Navigator.push(
+              SizedBox(height: widget.scheight*0.042,),
+              FloatingActionButton.extended(
+                backgroundColor: Color(ColorConstants.secondary),
+                onPressed: (){
+                  Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>ScheduleEvent(scwidth: widget.scwidth, scheight: widget.scheight,))
-                  );
-                },
-                child: Container(
-                  height:widget.scheight*0.0854,
-                  child: Image.asset(ImageConstants.Logo)))
-              ),
-              Text(
-                      "Create Event",
-                      style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.023,),
-                      ),
+                     MaterialPageRoute(builder: (context) =>ScheduleEvent(scwidth: widget.scwidth, scheight: widget.scheight,))
+                   );
+                 },
+                
+                label: Text("Create Event",
+                style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.7),)),
+                icon: Icon(Icons.add,color: Color(ColorConstants.fontcolor).withOpacity(0.7),),)
+              // Center(
+              //   child: GestureDetector(
+              //   onTap: () {
+              //      Navigator.push(
+              //       context,
+              //       MaterialPageRoute(builder: (context) =>ScheduleEvent(scwidth: widget.scwidth, scheight: widget.scheight,))
+              //     );
+              //   },
+              //   child: Container(
+              //     height:widget.scheight*0.0854,
+              //     child: Image.asset(ImageConstants.Logo)))
+              // ),
+              // Text(
+              //         "Create Event",
+              //         style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.023,),
+              //         ),
               
             ]
             

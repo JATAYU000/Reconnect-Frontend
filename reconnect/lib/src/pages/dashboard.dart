@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
-import 'package:reconnect/src/constants/text_strings.dart';
 import 'package:reconnect/src/models/institution.dart';
 import 'package:reconnect/src/pages/homepage.dart';
 import 'package:reconnect/src/pages/select_uni.dart';
@@ -22,7 +21,7 @@ class _DashboardState extends State<DashboardPage> {
 
 
 
-  late String username;
+  late String username = "<none>";
   @override
   void initState() {
     super.initState();
@@ -51,10 +50,13 @@ class _DashboardState extends State<DashboardPage> {
                     width: widget.scwidth*0.79,
                     child: Image.asset(ImageConstants.LogoText),
                   ),
-            SizedBox(height: widget.scheight*.019,),
             Text(
               'Hello ${username}!',
               style: GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize: widget.scheight*0.038,fontWeight: FontWeight.bold),
+              ),
+            Text(
+              'Access your Alumni Networks here',
+              style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.47),fontSize: widget.scheight*0.02,),
               ),
             SizedBox(height: widget.scheight*0.03,),
             Container(
@@ -80,24 +82,20 @@ class _DashboardState extends State<DashboardPage> {
                 }
               )
             ),
-            Center(
-              child: IconButton(
-                icon: Icon(Icons.add_circle),
-                iconSize: widget.scheight*0.0514,
-                color: Color(ColorConstants.primary),
-                onPressed: () {
+            SizedBox(height: widget.scheight*0.042,),
+              FloatingActionButton.extended(
+                backgroundColor: Color(ColorConstants.primary),
+                onPressed: (){
                   Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) =>SelectUni(scwidth: widget.scwidth, scheight: widget.scheight,)),
-                    (route) => false,
-                  );
-                }
-              )
-            ),
-            Text(
-                    TextConstants.DashSub,
-                    style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.023,),
-                    ),
+                     MaterialPageRoute(builder: (context) =>SelectUni(scwidth: widget.scwidth, scheight: widget.scheight,)),
+                     (route) => false
+                   );
+                 },
+                
+                label: Text("Add Institute",
+                style: GoogleFonts.sora(color: Colors.white,)),
+                icon: Icon(Icons.add,color: Colors.white),)
           ]
         )
         )

@@ -26,7 +26,7 @@ class _RegisterUniState extends State<RegisterUni> {
         child:SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: widget.scheight*0.04,),
+            // SizedBox(height: widget.scheight*0.04,),
             Container(
                     height: widget.scheight*0.131,
                     width: widget.scwidth*0.79,

@@ -42,13 +42,6 @@ class _AddUniversityState extends State<AddUniversity> {
               style: GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize: widget.scheight*0.038,fontWeight: FontWeight.bold),
               ),
             SizedBox(height: widget.scheight*0.027,),
-            SizedBox(
-              width: widget.scwidth * 0.852,
-              height:widget.scheight*0.10,
-              child: clollege_list(context, widget.scwidth, widget.scheight,widget.index, InstitutionList,
-              () {}
-                  ),
-            ),
             Container(
               height: widget.scheight*0.246,
               width: widget.scwidth*0.452,
@@ -59,32 +52,27 @@ class _AddUniversityState extends State<AddUniversity> {
             SizedBox(height: widget.scheight*0.03,),
             Userinput("Graduation year", widget.scheight, widget.scwidth, AddYear,false),
             SizedBox(height: widget.scheight*0.02,),
-            Center(
-              child: IconButton(
-                icon: Icon(Icons.add_circle),
-                iconSize: widget.scheight*0.0514,
-                color: Color(ColorConstants.primary),
-                onPressed: () {
+            FloatingActionButton.extended(
+                backgroundColor: Color(ColorConstants.primary),
+                onPressed: (){
                   if(AddDept.text!="" && AddYear.text!=""){
                   Dashboard.add(Institution(
                     name: InstitutionList[widget.index].name, 
                     instituteIcon: InstitutionList[widget.index].instituteIcon,
                     dept: AddDept.text,
                      year: AddYear.text));
-                  Navigator.push(
+                  Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(builder: (context) => NavBar(scwidth: widget.scwidth, scheight: widget.scheight, 
-                    ))
+                    )),
+                    (route) =>  false
                   );
                      }
-                  
-                }
-              )
-            ),
-            Text(
-                    TextConstants.AddUniSub,
-                    style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.023,),
-                    ),
+                 },
+                
+                label: Text("Add To Dashboard",
+                style: GoogleFonts.sora(color: Colors.white,)),
+                icon: Icon(Icons.add,color: Colors.white),)
           ]
         )
         )

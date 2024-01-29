@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
         child:SingleChildScrollView(
           child: Column(
           children: [
-            SizedBox(height: widget.scheight*0.03),
+            // SizedBox(height: widget.scheight*0.03),
             Container(
               height: widget.scheight*0.131,
               width: widget.scwidth*0.79,
@@ -90,9 +90,8 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             SizedBox(height: widget.scheight*0.02,),
-            Authbutton("Login", widget.scheight, widget.scwidth, ()  { 
+            Authbutton("Login", widget.scheight, widget.scwidth, () async  { 
               print("pressed login!!!${isLoggedIn}");
-              setState(() async {
                 try{
                   token = fetchUserPost(user_controller.text, email_controller.text, pass_controller.text);
                   print(await token);
@@ -106,9 +105,9 @@ class _LoginPageState extends State<LoginPage> {
                       MaterialPageRoute(builder: (context) => DashboardPage(scwidth: widget.scwidth, scheight: widget.scheight))
                     );
                 } catch(e) {print(e);};
-              });
 
             }),
+
               
             SizedBox(height: widget.scheight*.015,),    
             SizedBox(

@@ -29,7 +29,6 @@ class _SelectUniState extends State<SelectUni> {
         child:SingleChildScrollView(
           child: Column(
           children:  [
-            SizedBox(height: widget.scheight*0.04),
             Container(
               height: widget.scheight*0.131,
               width: widget.scwidth*0.80,

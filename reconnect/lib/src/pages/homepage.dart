@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          width: widget.scwidth*0.999,
+          width: widget.scwidth*1,
           height: widget.scheight*0.999,
           child: Column(
             children: [
@@ -110,7 +110,6 @@ class _HomePageState extends State<HomePage> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    SizedBox(width:30),
                     SizedBox(
                       width: widget.scwidth * 1,
                       height:widget.scheight*0.25,

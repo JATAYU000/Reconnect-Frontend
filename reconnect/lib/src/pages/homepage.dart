@@ -131,34 +131,18 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(height: widget.scheight*0.042,),
               FloatingActionButton.extended(
-                backgroundColor: Color(ColorConstants.secondary),
+                backgroundColor: Color(ColorConstants.primary),
                 onPressed: (){
-                  Navigator.push(
+                  Navigator.pushAndRemoveUntil(
                     context,
-                     MaterialPageRoute(builder: (context) =>ScheduleEvent(scwidth: widget.scwidth, scheight: widget.scheight,))
+                     MaterialPageRoute(builder: (context) =>ScheduleEvent(scwidth: widget.scwidth, scheight: widget.scheight,)),
+                     (route) => false
                    );
                  },
                 
                 label: Text("Create Event",
-                style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.7),)),
-                icon: Icon(Icons.add,color: Color(ColorConstants.fontcolor).withOpacity(0.7),),)
-              // Center(
-              //   child: GestureDetector(
-              //   onTap: () {
-              //      Navigator.push(
-              //       context,
-              //       MaterialPageRoute(builder: (context) =>ScheduleEvent(scwidth: widget.scwidth, scheight: widget.scheight,))
-              //     );
-              //   },
-              //   child: Container(
-              //     height:widget.scheight*0.0854,
-              //     child: Image.asset(ImageConstants.Logo)))
-              // ),
-              // Text(
-              //         "Create Event",
-              //         style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.023,),
-              //         ),
-              
+                style: GoogleFonts.sora(color: Colors.white,)),
+                icon: Icon(Icons.add,color: Colors.white),)
             ]
             
             

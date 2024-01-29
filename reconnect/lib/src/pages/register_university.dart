@@ -39,11 +39,7 @@ class _RegisterUniState extends State<RegisterUni> {
               ),
             SizedBox(height: widget.scheight*0.03,),
             Userinput("Institution name", widget.scheight, widget.scwidth, RegUni),
-            Container(
-                    height: widget.scheight*0.442,
-                    width: widget.scwidth*0.483,
-                    child: Image.asset(ImageConstants.RegUni),
-                  ),
+            SizedBox(height: widget.scheight*0.04),
             Authbutton("Request", widget.scheight, widget.scwidth, () { print("Requested: !!");})
           ]
         )

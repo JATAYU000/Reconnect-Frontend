@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
-import 'package:reconnect/src/constants/text_strings.dart';
 import 'package:reconnect/src/models/events.dart';
 import 'package:reconnect/src/models/participants.dart';
 import 'package:reconnect/src/models/queries.dart';
@@ -54,24 +53,16 @@ class _Event_DescriptionState extends State<Event_Description> {
                         width: widget.scwidth*0.79,
                         child: Image.asset(ImageConstants.LogoText),
                       ),
-                SizedBox(height: widget.scheight*.028,),
+                SizedBox(height: widget.scheight*.015,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   width: widget.scwidth*0.494,
-                  height: widget.scheight*0.308,
+                  height: widget.scheight*0.338,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        TextConstants.ViewEvent,
-                        style: GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize: widget.scheight*0.038,fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                      widget.event.heading,
-                        style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.023,fontWeight: FontWeight.bold),
-                      ),
                       Container(
                         child:Row(
                           children: [
@@ -79,6 +70,11 @@ class _Event_DescriptionState extends State<Event_Description> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                              Text(
+                             widget.event.heading,
+                              style: GoogleFonts.sora(color: Color(ColorConstants.primary),fontSize: widget.scheight*0.038,fontWeight: FontWeight.bold),
+                              ),  
+                              SizedBox(height: 10,),
                                 Text(
                             "Event Date:${widget.event.eventDate}",
                             style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.019,),
@@ -202,11 +198,7 @@ class _Event_DescriptionState extends State<Event_Description> {
                           style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.023,fontWeight: FontWeight.bold),
                         ),
                         SizedBox(width: 20,),
-                        Container(
-                          width: widget.scwidth*0.154,
-                          height: widget.scheight*0.127,
-                          child: Image.asset(ImageConstants.Description),
-                        )
+                        
                       ],
                     ),
                     SizedBox(height:50),
@@ -327,8 +319,8 @@ class _Event_DescriptionState extends State<Event_Description> {
                     children: [
                       Row(
                         children: [
-                          SizedBox(height: widget.scheight*0.08,),
-                          SizedBox(width:50),
+                          SizedBox(height: 50,),
+                          SizedBox(width:30),
                           Text(
                             "Host",
                             style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.023,fontWeight: FontWeight.bold),
@@ -339,10 +331,10 @@ class _Event_DescriptionState extends State<Event_Description> {
                       ),
                       Row(
                         children: [
-                          SizedBox(width:50),
+                          SizedBox(width:30),
                           Container(
                             width: widget.scwidth*0.071,
-                            height: widget.scheight*0.038,
+                            height: widget.scheight*0.028,
                             child: Image.asset(ImageConstants.NavProfile),
                           ),
                           SizedBox(width:15),
@@ -354,23 +346,25 @@ class _Event_DescriptionState extends State<Event_Description> {
                         ],
                         
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 10),
                       Row(
                         children: [
-                          SizedBox(width:50),
+                          SizedBox(width:30),
                           Text(
                             "Participants",
                             textAlign: TextAlign.start,
                                 style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),fontSize: widget.scheight*0.023,fontWeight: FontWeight.bold),
                           ),
+                          
                         ],
                       ),
+                      SizedBox(height: 8,),
                       Container(
                         child: Column(
                           children: participantList.map((Participants participant){
                             return Row(
                           children: [
-                            SizedBox(width:50),
+                            SizedBox(width:30),
                             Container(
                               width: widget.scwidth*0.071,
                               height: widget.scheight*0.038,

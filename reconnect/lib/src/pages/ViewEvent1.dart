@@ -124,15 +124,33 @@ class _Event_DescriptionState extends State<Event_Description> {
         
                       ),
                       ReuseButton(regisbutton,widget.scwidth*0.127 , widget.scheight*0.209, () {
-                        setState(() {
-                          if (regisbutton=="Register" ){
-                          regisbutton="Registered";  
-                          participantList.add(Participants(profileImage: ImageConstants.NavProfile, name: username));
-                          _updatetext.clear();
-                          }else if (regisbutton=="Registered" ){
-                            regisbutton="Register";
-                            participantList.removeWhere((participant)=> participant.name==username);
-                          }
+                        showDialog(context: context, builder: (context){
+                          return Container(
+                            child: AlertDialog(
+                              title: Text("Are you sure?",
+                              style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.6),)),
+                              actions: [
+                                TextButton(onPressed: (){
+                                  Navigator.pop(context);
+                                  setState(() {
+                                    if (regisbutton=="Register" ){
+                                      regisbutton="Unregister";  
+                                      participantList.add(Participants(profileImage: ImageConstants.NavProfile, name: username));
+                                      _updatetext.clear();
+                                    }else if (regisbutton=="Unregister" ){
+                                      regisbutton="Register";
+                                      participantList.removeWhere((participant)=> participant.name==username);
+                                    }
+                                  });
+                                }, child: Text("Yes",
+                                style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),))),
+                              TextButton(onPressed: (){
+                                  Navigator.pop(context);
+                                }, child: Text("No",
+                                style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.45),)))  
+                              ],
+                            ),
+                          );
                         });
                         
                       })

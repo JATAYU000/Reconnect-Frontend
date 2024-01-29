@@ -40,7 +40,7 @@ class _NavBarState extends State<NavBar> {
         Notifications(scwidth: widget.scwidth, scheight: widget.scheight)],
       ),
       bottomNavigationBar:  ClipRRect(
-          borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30)),
           child: BottomNavigationBar(
             backgroundColor: Color(ColorConstants.secondary),
             onTap:(index){

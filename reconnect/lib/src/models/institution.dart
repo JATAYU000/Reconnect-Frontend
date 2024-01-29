@@ -6,6 +6,22 @@ class Institution{
   String dept;
   String year;
   Institution({required this.name,required this.instituteIcon,required this.dept,required this.year});
+
+  Institution.fromMap(Map map)        // This Function helps to convert our Map into our User Object
+      : this.name = map["name"],
+        this.dept = map['dept'],
+        this.year = map['year'],
+        this.instituteIcon = map['instituteIcon'];
+
+  Map toMap() {               // This Function helps to convert our User Object into a Map.
+    return {
+      "name": this.name,
+      "dept": this.dept,
+      "year": this.year,
+      "instituteIcon": this.instituteIcon,
+    };
+  }
+
 }
 
 List<Institution> InstitutionList =[

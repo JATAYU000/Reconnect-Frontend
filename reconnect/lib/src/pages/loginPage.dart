@@ -54,11 +54,11 @@ class _LoginPageState extends State<LoginPage> {
               style: GoogleFonts.sora(color: Color(ColorConstants.primary), fontSize: widget.scheight*0.042,fontWeight: FontWeight.bold),
             ),
             SizedBox(height: widget.scheight*.01),
-            Userinput('Username', widget.scheight , widget.scwidth, user_controller),
+            Userinput('Username', widget.scheight , widget.scwidth, user_controller, false),
             SizedBox(height: widget.scheight*.01),
-            Userinput('Email', widget.scheight , widget.scwidth, email_controller),
+            Userinput('Email', widget.scheight , widget.scwidth, email_controller,false),
             SizedBox(height: widget.scheight*.01),
-            Userinput('Password', widget.scheight , widget.scwidth, pass_controller),
+            Userinput('Password', widget.scheight , widget.scwidth, pass_controller,true),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

@@ -55,9 +55,9 @@ class _AddUniversityState extends State<AddUniversity> {
               child: Image.asset(ImageConstants.AddUni),
             ),
             SizedBox(height: widget.scheight*0.03,),
-            Userinput("Department (Abbr.)", widget.scheight, widget.scwidth, AddDept),
+            Userinput("Department (Abbr.)", widget.scheight, widget.scwidth, AddDept,false),
             SizedBox(height: widget.scheight*0.03,),
-            Userinput("Graduation year", widget.scheight, widget.scwidth, AddYear),
+            Userinput("Graduation year", widget.scheight, widget.scwidth, AddYear,false),
             SizedBox(height: widget.scheight*0.02,),
             Center(
               child: IconButton(

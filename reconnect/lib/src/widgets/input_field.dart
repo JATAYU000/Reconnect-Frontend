@@ -8,6 +8,7 @@ SizedBox Userinput(
   final int screenheight,
   final int screenwidth,
   final TextEditingController control,
+  final bool ispass,
 ) {
   return 
   SizedBox(
@@ -15,6 +16,7 @@ SizedBox Userinput(
     width: screenwidth*0.9,
     child: 
         TextField(
+          obscureText: ispass,
           controller: control,
           decoration: InputDecoration(        
               enabledBorder: UnderlineInputBorder(      

@@ -42,17 +42,23 @@ class _LoginPageState extends State<LoginPage> {
         child:SingleChildScrollView(
           child: Column(
           children: [
-            SizedBox(height: widget.scheight*0.04),
+            SizedBox(height: widget.scheight*0.03),
             Container(
               height: widget.scheight*0.131,
               width: widget.scwidth*0.79,
               child: Image.asset(ImageConstants.LogoText),
             ),
-            SizedBox(height: widget.scheight*.028),
+            SizedBox(height: widget.scheight*.025),
             Text(
               TextConstants.WelcomeBack,
               style: GoogleFonts.sora(color: Color(ColorConstants.primary), fontSize: widget.scheight*0.042,fontWeight: FontWeight.bold),
             ),
+            SizedBox(height: widget.scheight*.010),
+            Container(
+              height: widget.scheight*0.191,
+              width: widget.scwidth*0.99,
+              child: Image.asset(ImageConstants.login_page),
+            ), 
             SizedBox(height: widget.scheight*.01),
             Userinput('Username', widget.scheight , widget.scwidth, user_controller),
             SizedBox(height: widget.scheight*.01),
@@ -83,6 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
+            SizedBox(height: widget.scheight*0.02,),
             Authbutton("Login", widget.scheight, widget.scwidth, ()  { 
               print("pressed login!!!${isLoggedIn}");
               setState(() async {
@@ -102,12 +109,7 @@ class _LoginPageState extends State<LoginPage> {
               });
 
             }),
-            SizedBox(height: widget.scheight*.013),
-            Container(
-              height: widget.scheight*0.241,
-              width: widget.scwidth*0.99,
-              child: Image.asset(ImageConstants.login_page),
-            ),   
+              
             SizedBox(height: widget.scheight*.015,),    
             SizedBox(
               width: widget.scwidth*0.717,

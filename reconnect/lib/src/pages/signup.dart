@@ -82,11 +82,6 @@ class _SignUpState extends State<SignUp> {
                     ]
                     ,)
                   ),
-            Container(
-              height: widget.scheight*0.109,
-              width: widget.scwidth*1.87,
-              child: Image.asset(ImageConstants.Signimgae),
-            )
           ],
         ))
       ),

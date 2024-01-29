@@ -28,7 +28,7 @@ Future<String> fetchUserPost(name,email,password) async {
   };
   print(request);
 
-  final url = Uri.parse("http://192.168.11.57:8000/api/login/");
+  final url = Uri.parse("http://192.168.181.226:8000/api/login/");
   final response = await http.post(url,body: request);
   print("status code not 200 : ${response.statusCode}");
   print("Exception: ${response}");

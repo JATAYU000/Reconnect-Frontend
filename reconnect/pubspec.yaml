@@ -38,7 +38,12 @@ dependencies:
   google_fonts: ^6.1.0
   image_picker: ^1.0.7
   shared_preferences: ^2.2.2
+  flutter_launcher_icons: ^0.13.1
 
+flutter_icons:
+  image_path: "assets/images/logo.png" 
+
+  android: true
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -65,7 +70,9 @@ flutter:
   assets:
     - assets/images/
     - assets/logos/
+    # - assets/images/logo.png
   #   - images/a_dot_ham.jpeg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

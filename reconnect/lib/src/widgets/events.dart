@@ -44,8 +44,7 @@ final VoidCallback callback,
                     SizedBox(width: scwidth*0.030,
                     height: 0.03,),
                     Icon(Icons.location_on,
-                    color: Color(ColorConstants.fontcolor).withOpacity(0.7),
-                    ),
+                    color:Color(ColorConstants.fontcolor).withOpacity(0.5)),
                     SizedBox(width: 5,),
                     Text(list[index].location,style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.5), fontSize: scheight*0.015))
                   ],
@@ -55,7 +54,7 @@ final VoidCallback callback,
                 child: Row(
                   children: [
                     SizedBox(width: scwidth*0.030,),
-                    Icon(Icons.calendar_month,color: Color(ColorConstants.fontcolor).withOpacity(0.7),),
+                    Icon(Icons.calendar_month,color:Color(ColorConstants.fontcolor).withOpacity(0.5)),
                     SizedBox(width: 5,),
                     Text('${list[index].eventDate} , ${list[index].eventTime}',style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.5), fontSize: scheight*0.015))
                   ],
@@ -65,7 +64,7 @@ final VoidCallback callback,
                 child: Row(
                   children: [
                     SizedBox(width: scwidth*0.030,),
-                    Icon(Icons.school,color: Color(ColorConstants.fontcolor).withOpacity(0.7),),
+                    Icon(Icons.school,color:Color(ColorConstants.fontcolor).withOpacity(0.5)),
                     SizedBox(width: 5,),
                     Text('Batch of ${list[index].passOutYear}',style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.5), fontSize: scheight*0.015))
                   ],
@@ -76,7 +75,7 @@ final VoidCallback callback,
                 child: Row(
                   children: [
                     SizedBox(width: scwidth*0.030,),
-                    Icon(Icons.auto_stories,color: Color(ColorConstants.fontcolor).withOpacity(0.7),),
+                    Icon(Icons.auto_stories,color:Color(ColorConstants.fontcolor).withOpacity(0.5)),
                     SizedBox(width: 5,),
                     Text(list[index].department,style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.5), fontSize: scheight*0.015)),
                    

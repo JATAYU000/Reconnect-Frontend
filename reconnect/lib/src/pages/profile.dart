@@ -93,12 +93,6 @@ class _ProfileState extends State<Profile> {
                   color: Colors.white
                 ),),
               ),
-              Container(
-                height: widget.scheight*0.227 ,
-                width: widget.scwidth*0.490,
-                child:Image.asset(ImageConstants.login_page),
-
-              )
           ]
         )
         )

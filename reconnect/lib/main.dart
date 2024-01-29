@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reconnect/src/constants/globals.dart';
 import 'package:reconnect/src/pages/dashboard.dart';
-import 'package:reconnect/src/pages/homepage.dart';
 import 'package:reconnect/src/pages/welcomepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

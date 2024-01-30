@@ -44,7 +44,7 @@ class _SelectUniState extends State<SelectUni> {
             SizedBox(height: widget.scheight*.020),
             SizedBox(
               width: widget.scwidth * 0.852,
-              height:widget.scheight*0.430,
+              height:widget.scheight*0.550,
               child:ListView.builder(
                 itemCount: InstitutionList.length,
                 itemBuilder: (context, index) {
@@ -60,7 +60,7 @@ class _SelectUniState extends State<SelectUni> {
                 }
               )
             ),
-            SizedBox(height: widget.scheight*.10),
+            SizedBox(height: widget.scheight*0.03,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

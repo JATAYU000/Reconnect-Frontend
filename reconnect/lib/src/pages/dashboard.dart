@@ -77,7 +77,7 @@ class _DashboardState extends State<DashboardPage> {
                     print("OOOOOOOOOOOOOOOOOOOO");
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage(scwidth: widget.scwidth, scheight: widget.scheight))
+                      MaterialPageRoute(builder: (context) => HomePage(scwidth: widget.scwidth, scheight: widget.scheight,))
                     );
                   });
                 }

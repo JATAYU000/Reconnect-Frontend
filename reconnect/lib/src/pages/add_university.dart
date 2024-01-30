@@ -4,7 +4,6 @@ import 'package:reconnect/src/constants/colors.dart';
 import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
 import 'package:reconnect/src/models/institution.dart';
-import 'package:reconnect/src/widgets/clg_list.dart';
 import 'package:reconnect/src/widgets/input_field.dart';
 import 'package:reconnect/src/widgets/navigationbar.dart';
 
@@ -67,6 +66,16 @@ class _AddUniversityState extends State<AddUniversity> {
                     )),
                     (route) =>  false
                   );
+                     } else {
+                      showDialog(context: context, builder: (context){
+                          return Container(
+                            child: AlertDialog(
+                              title: Text("Please fill in the details",
+                              style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.6), fontSize: widget.scheight*0.02)),
+                              
+                            ),
+                          );
+                        });
                      }
                  },
                 

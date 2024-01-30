@@ -155,34 +155,31 @@ class _Event_DescriptionState extends State<Event_Description> {
                   ))
               ],
             ) ,
-            Divider(
-              color: Color(ColorConstants.primary),
-              thickness: 2,
-            ),
-            TabBar(
-              tabs: [
-                Padding(
-                  padding:EdgeInsets.symmetric(horizontal:16.0),
-                  child: Tab(text: 'Details'),
-                ),
-                Padding(
-                  padding:EdgeInsets.symmetric(horizontal:16.0),
-                  child: Tab(text: 'Queries'),
-                ),
-                Padding(
-                  padding:EdgeInsets.symmetric(horizontal:8.0),
-                  child: Tab(text: 'Participants'),
-                ),
-              ],
-              labelColor: Color(ColorConstants.primary),
-              unselectedLabelColor: Color(ColorConstants.primary),
-              indicator:BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0),
-                border:Border.all(
-                  color:  Color(ColorConstants.primary),
-                  width: 2,
-                ),
-                
+            Container(
+              decoration: BoxDecoration(color: Color(ColorConstants.primary)),
+              child: TabBar(
+                tabs: [
+                  Padding(
+                    padding:EdgeInsets.symmetric(horizontal:16.0),
+                    child: Tab(text: 'Details'),
+                  ),
+                  Padding(
+                    padding:EdgeInsets.symmetric(horizontal:16.0),
+                    child: Tab(text: 'Queries'),
+                  ),
+                  Padding(
+                    padding:EdgeInsets.symmetric(horizontal:5.0),
+                    child: Tab(text: 'Participants'),
+                  ),
+                ],
+                labelColor: Color(ColorConstants.primary),
+                unselectedLabelColor: Colors.white,
+                indicator:BoxDecoration(
+                  color: Colors.white,
+                  ),
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  
+               
               ),
             ),
             Expanded(
@@ -288,7 +285,7 @@ class _Event_DescriptionState extends State<Event_Description> {
                             ),
                             Row(
                               children: [
-                                SizedBox(width: 75,),
+                                SizedBox(width:widget.scwidth*0.18,),
                                 Container(
                                   width: widget.scwidth*0.8,
                                   child: Text(

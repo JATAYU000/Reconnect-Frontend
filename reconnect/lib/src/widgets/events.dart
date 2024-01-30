@@ -12,7 +12,6 @@ final int index,
 final List<Events> list,
 final VoidCallback callback,
 ) {
-  print("datalen : ${list.length}");
   return Row(
     children: [
       GestureDetector(

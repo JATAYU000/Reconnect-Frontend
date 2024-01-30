@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reconnect/src/pages/dashboard.dart';
 import 'package:reconnect/src/pages/welcomepage.dart';
+import 'package:reconnect/src/shared_pref/shared_prefs.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -22,6 +23,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     _loadPreferences();
+    saveBool('req', true);
   }
 
   // Method to load the shared preference data
@@ -29,8 +31,10 @@ class _MyAppState extends State<MyApp> {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _islog = prefs.getBool('isLoggedIn') ?? false;
+
       // _islog =false;
     });
+    prefs.setBool('isReq',true);
     print(_islog);
   }
   
@@ -42,7 +46,7 @@ class _MyAppState extends State<MyApp> {
     int height = MediaQuery.of(context).size.height.toInt();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Trail Tales',
+      title: 'Reconnect',
       theme: ThemeData(),
       home: _islog ? DashboardPage(scwidth: width, scheight: height) : WelcomePage(scwidth: width, scheight: height) 
     );

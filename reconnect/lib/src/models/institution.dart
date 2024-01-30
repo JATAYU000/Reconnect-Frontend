@@ -29,6 +29,9 @@ List<Institution> InstitutionList =[
   Institution(name: "VIT (Vellore campus)",instituteIcon: ImageConstants.ColVit,dept:"",year:""),
   Institution(name: "Amrita Vishwa Vidyapeetham\n(Amritapuri Campus)",instituteIcon: ImageConstants.ColAmt,dept:"",year:""),
   Institution(name: "IIT Delhi",instituteIcon: ImageConstants.ColIit,dept:"",year:""),
+  Institution(name: "AIIMS Delhi",instituteIcon: ImageConstants.aiims,dept:"",year:""),
+  Institution(name: "Christ University (Bangalore)",instituteIcon: ImageConstants.christ,dept:"",year:""),
+  Institution(name: "Kottayam Medical College",instituteIcon: ImageConstants.Kmc,dept:"",year:""),
 ];
 
 List<Institution> Dashboard = [];

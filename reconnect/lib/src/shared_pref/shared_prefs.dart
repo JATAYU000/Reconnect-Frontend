@@ -33,3 +33,17 @@ loadPreferences(String key) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   prefs.setString(key,value);
 }
+ Future<void> removeData(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(key);
+  }
+
+  Future<bool?> getBool(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(key);
+  }
+
+  Future<bool> saveBool(String key, bool value) async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.setBool(key, value);
+  }

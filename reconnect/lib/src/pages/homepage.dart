@@ -5,39 +5,52 @@ import 'package:reconnect/src/constants/image_strings.dart';
 import 'package:reconnect/src/constants/text_strings.dart';
 import 'package:reconnect/src/models/events.dart';
 import 'package:reconnect/src/models/institution.dart';
+import 'package:reconnect/src/shared_pref/shared_prefs.dart';
+// import 'package:reconnect/src/shared_pref/shared_prefs.dart' as sp;
 import 'package:reconnect/src/widgets/events.dart';
 import 'package:reconnect/src/pages/schedule_event.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   final int scwidth;
   final int scheight;
   
-  
-  const HomePage({super.key, required this.scwidth,required this.scheight,});
+  const HomePage({super.key, required this.scwidth,required this.scheight});
 
   @override     
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  late bool isReq = true;
   List<Events> UpdatedEvents = [];
 
    @override
   void initState() {
     super.initState();
-      _load();
-    
-    
   }
+
   _load(){
-    getData().then((data){
-      // print('Length:  ${UpdatedEvents[2].heading}');
+    getData().then((data) {
+      setState(() {
+        EventList =  data;
+        UpdatedEvents =  data;
+      });
       return data;
+      
     });
+    
   }
+
+
+  // void setReq(bool req) async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   prefs.setBool('isReq', req);
+  // }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return isReq ? Scaffold(
       body: SafeArea(
         child: Container(
           width: widget.scwidth*1,
@@ -117,7 +130,6 @@ class _HomePageState extends State<HomePage> {
                         scrollDirection: Axis.horizontal,
                         itemCount: EventList.length,
                         itemBuilder: (context, index) {
-                          print("this is the problem${UpdatedEvents.length}");
                           return EventBox(context, widget.scwidth, widget.scheight,index,EventList,
                           () {}
                           );
@@ -132,10 +144,9 @@ class _HomePageState extends State<HomePage> {
               FloatingActionButton.extended(
                 backgroundColor: Color(ColorConstants.primary),
                 onPressed: (){
-                  Navigator.pushAndRemoveUntil(
+                  Navigator.push(
                     context,
                      MaterialPageRoute(builder: (context) =>ScheduleEvent(scwidth: widget.scwidth, scheight: widget.scheight,)),
-                     (route) => false
                    );
                  },
                 
@@ -148,7 +159,18 @@ class _HomePageState extends State<HomePage> {
           )
           ),
       )
-    );
+    )
+    : Scaffold(
+      body: Center(
+      child: Container(
+       padding: const EdgeInsets.all(50),
+       margin:const EdgeInsets.all(50) ,
+//widget shown according to the state
+       child: Center(
+           child: CircularProgressIndicator(),
+       ),
+      )
+    ));
       
     
   }

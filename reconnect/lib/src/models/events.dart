@@ -1,4 +1,5 @@
 import 'dart:convert';
+// import 'dart:html';
 import 'package:http/http.dart' as http;
 
 class Events {
@@ -77,7 +78,7 @@ List<Events> EventList = [
      ),
 
 ];
-List<Events> UpdatedEvents = EventList;
+List<Events> UpdatedEvents = [];
 
 
 Future <List<Events>> getData() async {
@@ -86,19 +87,11 @@ Future <List<Events>> getData() async {
   print(data);
   print(("Status code is  === ${response.statusCode}"));
   if(response.statusCode == 200) {
+    // EventList = [];
     for(Map<String, dynamic> index in data){
        print(EventList.length);
       EventList.add(Events.fromMap(index));
-      // print(EventList.length);
-      // EventList.add(Events(colindex: Events.fromMap(index).colindex,
-      //  heading: Events.fromMap(index).heading,
-      //   username: Events.fromMap(index).username,
-      //    passOutYear: Events.fromMap(index).passOutYear,
-      //     location: Events.fromMap(index).location,
-      //      eventDate: Events.fromMap(index).eventDate, 
-      //      description: Events.fromMap(index).description,
-      //       department: Events.fromMap(index).department,
-      //        eventTime: Events.fromMap(index).eventTime));
+      print(EventList.length);
     }
     // print(EventList[2].heading);
     return EventList;
@@ -106,3 +99,39 @@ Future <List<Events>> getData() async {
     return EventList;
   }
 }
+
+// FetchEvent( 
+//   int colindex,
+//     String heading,
+//     String username,
+//     String passOutYear,
+//     String location,
+//     String eventDate,
+//     String description,
+//     String department,
+//     String eventTime,
+
+// ) async {
+//   Map<String,dynamic> req = {
+//     "colindex": colindex.toString(),
+//         "heading": heading,
+//         "username": username,
+//         "pass_out_year": passOutYear,
+//         "location": location,
+//         "event_date": eventDate,
+//         "description": description,
+//         "department": department,
+//         "event_time": eventTime,
+//   };
+//   print(req);
+
+//   final response = await http.post(Uri.parse('http://192.168.181.226:8000/api/data/post/'), body:req);
+//   print("status code not 200 : ${response.statusCode}");
+//   print("Exception: ${response}");
+//   if (response.statusCode == 200){
+//     print("Sucess");
+    
+//   } else{
+//     throw Exception("Failed to load post");
+//   }
+// }

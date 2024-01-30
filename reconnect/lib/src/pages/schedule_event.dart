@@ -10,6 +10,7 @@ import 'package:reconnect/src/pages/homepage.dart';
 import 'package:reconnect/src/widgets/event_input.dart';
 import 'package:reconnect/src/widgets/event_description.dart';
 import 'package:reconnect/src/widgets/ReuseButton.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class ScheduleEvent extends StatefulWidget {
@@ -30,6 +31,20 @@ class _ScheduleEvent extends State<ScheduleEvent> {
   TextEditingController time_controller = TextEditingController();
   TextEditingController _descriptionController = TextEditingController();
 
+  late String username = "<none>";
+  @override
+  void initState() {
+    super.initState();
+    
+    _loadPreferences();
+  }
+
+  void _loadPreferences() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      username = prefs.getString('username') ?? "none";
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,9 +98,20 @@ class _ScheduleEvent extends State<ScheduleEvent> {
             DescriptionWidget(scwidth: widget.scwidth, scheight: widget.scheight, Description: _descriptionController),  
             SizedBox(height: widget.scheight*.01,),
             ReuseButton("Schedule", widget.scheight*0.07 , widget.scwidth*0.54,() { 
-              EventList.add(Events(colindex: EventList.length,
+
+              if(heading_controller.text!='' && pass_controller.text!='' && location_controller.text!='' && date_controller.text!='' && _descriptionController.text!='' && time_controller.text!=''){
+              //   FetchEvent(2,heading_controller.text, username, pass_controller.text, 
+              //  location_controller.text, 
+              //  date_controller.text, 
+              //  _descriptionController.text, 
+              //  department_controller.text, 
+              //  time_controller.text
+              //   );
+
+              
+                EventList.add(Events(colindex: 2,
                heading: heading_controller.text, 
-               username: "Shrivaths", 
+               username: username, 
                passOutYear: pass_controller.text, 
                location: location_controller.text, 
                eventDate: date_controller.text, 
@@ -94,10 +120,23 @@ class _ScheduleEvent extends State<ScheduleEvent> {
                eventTime: time_controller.text));
                Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage(scwidth: widget.scwidth, scheight: widget.scheight)),
+                      MaterialPageRoute(builder: (context) => HomePage(scwidth: widget.scwidth, scheight: widget.scheight,)),
 
                       (route) => false,
                     );
+
+              } else {
+                showDialog(context: context, builder: (context){
+                          return Container(
+                            child: AlertDialog(
+                              title: Text("Please fill in the details",
+                              style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.6), fontSize: widget.scheight*0.02)),
+                              
+                            ),
+                          );
+                        });
+              }
+              
             }),
           ],
                 ),

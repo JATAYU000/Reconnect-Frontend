@@ -7,6 +7,7 @@ import 'package:reconnect/src/pages/loginPage.dart';
 import 'package:reconnect/src/pages/select_uni.dart';
 import 'package:reconnect/src/widgets/authenticate_button.dart';
 import 'package:reconnect/src/widgets/input_field.dart';
+import 'package:reconnect/src/shared_pref/shared_prefs.dart' as sp;
 
 class SignUp extends StatefulWidget {
   final int scwidth;
@@ -53,10 +54,31 @@ class _SignUpState extends State<SignUp> {
             Userinput("Password", widget.scheight, widget.scwidth, SignPassword,true),
             SizedBox(height: widget.scheight*0.03,),
             Authbutton("Register", widget.scheight, widget.scwidth, () {
-              Navigator.push(
+              if(SignName.text!='' && SignName.text!='' && SignPassword.text!='' && SignUsername.text!=''){
+                sp.addString('username', SignUsername.text);
+                sp.addString('email', SignEmail.text);
+                sp.addString('password', SignPassword.text);
+
+
+              Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(builder: (context) => SelectUni(scwidth: widget.scwidth, scheight: widget.scheight))
+                ,(route) => false
               );
+
+              } else {
+                showDialog(context: context, builder: (context){
+                          return Container(
+                            child: AlertDialog(
+                              title: Text("Please fill in the details",
+                              style: GoogleFonts.sora(color: Color(ColorConstants.fontcolor).withOpacity(0.6), fontSize: widget.scheight*0.02)),
+                              
+                            ),
+                          );
+                        });
+
+              }
+              
              }),
             SizedBox(
                     width: widget.scwidth*0.717,

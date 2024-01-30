@@ -21,7 +21,9 @@ class ImageConstants{
   static const String Description = 'assets/images/Image-5.png';
   static const String Host = 'assets/images/image-9.png';
   static const String Description_Event = 'assets/images/image-7.png';
-
+  static const String Kmc = 'assets/logos/medi.png';
+  static const String aiims = 'assets/logos/aiims.png';
+  static const String christ = 'assets/logos/christ.png';
 
 
 
